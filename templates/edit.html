@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% block body %}
+<style type="text/css">
+  .container{
+    padding-left: 10%;
+    padding-top: 50%;
+    padding-bottom: 7%;
+  }
+  input{
+    width: 10%;
+  }
+  .form-control{
+    width: 75%;
+  }
+  .h1tag{
+    /*margin-left: 33%*/
+  }
+</style>
+<div id="page">
+  <nav class="fh5co-nav" role="navigation">
+    <div class="container-wrap">
+      <div class="top-menu">
+        <div class="row">
+          <div class="col-xs-2">
+            <div id="fh5co-logo"><a href="index.html">{{params['blog_name']}}</a></div>
+          </div>
+          <div class="col-xs-10 text-right menu-1">
+            <ul>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/work">Work</a></li>
+              <li class="has-dropdown active">
+                <a href="/blog">Blog</a>
+              </li>
+              <li><a href="/dashboard">Login</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+  <div class="container-wrap">
+    <aside id="fh5co-hero">
+      <div class="flexslider">
+        <ul class="slides">
+          {% set fname='/images/img_bg_3.jpg' %}
+          <li style="background-image: url('{{url_for('static', filename = fname)}}')">
+            <div class="overlay-gradient"></div>
+            <div class="container-fluids">
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
+                  <div class="slider-text-inner text-center">
+                    <h1>Blog</h1>
+                    <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank"
+                        style="color: rgb(13, 165, 107);">freehtml5.co</a></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto">
+          <a href="/dashboard"><button class="btn btn-primary">Dashboard Home</button></a>
+          <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+          <hr>
+          <div class="h1tag">
+            <h1>Add OR Edit posts</h1>
+          <p>You can add or eidt posts here</p>  
+          </div>
+          
+
+          <form name="sentMessage" id="contactForm" novalidate action="/blog/edit/{{sno}}" method="post">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" id="title" name="title" required
+                  data-validation-required-message="Please enter your Title." value="{{post.title}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Tagline</label>
+                <input type="text" class="form-control" placeholder="Tagline" id="tline" name="tline" required
+                  data-validation-required-message="Please enter your tagline." value="{{post.subtitle}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Slug</label>
+                <input type="text" class="form-control" placeholder="Slug" id="slug" name="slug" required
+                  data-validation-required-message="Please enter your tagline." value="{{post.slug}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Content</label>
+                <textarea rows="5" class="form-control" placeholder="Content" id="content" name="content" required
+                  data-validation-required-message="Please enter a Content.">{{post.content}}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Image File</label>
+                  <input type="text" class="form-control" placeholder="Image File" id="img_file" name="img_file"
+                    required data-validation-required-message="Please enter your tagline." value="{{post.img_file}}">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Enter your name</label>
+                  <input type="text" class="form-control" placeholder="Name" id="name" name="name" required
+                    data-validation-required-message="Please enter your tagline." value="{{post.name}}">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <br>
+              <div id="success"></div>
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

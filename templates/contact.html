@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container-wrap">
+			<div class="top-menu">
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="fh5co-logo"><a href="index.html">{{params['blog_name']}}</a></div>
+					</div>
+					<div class="col-xs-10 text-right menu-1">
+						<ul>
+							<li><a href="/home">Home</a></li>
+							<li><a href="/work">Work</a></li>
+							<li class="has-dropdown">
+								<a href="/blog">Blog</a>
+								
+							</li>
+							<li><a href="/dashboard">Login</a></li>
+							<li><a href="/about">About</a></li>
+							<li class="active"><a href="/contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+	<div class="container-wrap">
+		<aside id="fh5co-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url('{{url_for('static', filename='images/img_bg_3.jpg')}}');">
+			   		<div class="overlay-gradient"></div>
+			   		<div class="container-fluids">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 slider-text slider-text-bg">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Contact</h1>
+										<h2>Contat Us for more information <a href="http://codewithharry.com/" style="color: rgb(13, 165, 107);" target="_blank">Code With Harry</a></h2>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>		   	
+			  	</ul>
+		  	</div>
+		</aside>		
+		<div id="fh5co-contact">
+			<div class="row animate-box">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>Contact us</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-md-push-1 animate-box">
+					<h3>Our Address</h3>
+					<ul class="contact-info">
+						<li><i class="icon-location4"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
+						<li><i class="icon-phone3"></i>+92 315 4679237</li>
+						<li><i class="icon-location3"></i><a href="#">ContatUs@invincibles.com</a></li>
+						<li><i class="icon-globe2"></i><a href="#">Invincibles.com</a></li>
+					</ul>
+				</div>
+				<div class="col-md-7 col-md-push-1 animate-box">
+					<form class="row" method="post" action="/contact">
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Name" name="name">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Email" name="email">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Phone number" name="phone">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Country" name="country">
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label>Message</label>
+              					<textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" required data-validation-required-message="Please enter a message."></textarea>
+              					<p class="help-block text-danger"></p>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="submit" value="Send Message" class="btn btn-primary btn-modify">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div><!-- END container-wrap -->
+{% endblock %}

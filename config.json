@@ -1,0 +1,18 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/flaskblog2",
+    "prod_uri": "mysql://root:@localhost/flaskblog2",
+    "gmail_username": "bilal03154679237@gmail.com",
+    "gmail_password": "Bilal001122",
+    "fb_url": "https://facebook.com/invincibles",
+    "tw_url": "https://twitter.com/invincibles",
+    "lin_url": "https://linkedia.com/invincibles",
+    "dri_url": "https://dribbble.com/invincibles",
+    "blog_name": "Invincibles",
+    "no_of_posts": 5,
+    "admin_username": "Bilal",
+    "admin_password": "Bilal1122"
+  }
+}
